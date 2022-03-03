@@ -1,0 +1,12 @@
+lit.exe
+luvi.exe
+luvit.exe
+discordia.log
+gateway.json
+stuff.lua
+/deps
+opus.dll
+sodium.dll
+ffmpeg.exe
+youtube-dl.exe
+fly.toml
