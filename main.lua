@@ -4,7 +4,7 @@ local client = discord.Client()
 local helper = require 'helper'
 local stuff = require 'stuff'  -- all secret variables
 
-local command_groups = {'minecraft', 'music', 'utilities'}
+local command_groups = {'minecraft', 'utilities'}
 local prefix = 'mf'
 
 client:on('messageCreate', function(message)
@@ -22,9 +22,9 @@ client:on('messageCreate', function(message)
             if strict_prefix and index > 1 and thread:sub(1, 2) ~= prefix then goto continue end
             
             local main = thread:gsub(prefix..'%s?', '')
-            local stuff = helper.split(main, ' ')
-            local cmd = stuff[1]
-            local args = stuff[2]
+            local components = helper.split(main, ' ')
+            local cmd = components[1]
+            local args = components[2]
 
             for _, cmd_group in ipairs(command_groups) do
                 local exec = require('commands.'..cmd_group)
